@@ -6,5 +6,4 @@ ENV UNIFI_UID=999
 
 EXPOSE 8443 8080 8843 8880 6789 27117
 
-CMD ["bash", "-c", "/usr//bin/java -Xmx1024M -jar /usr/lib/unifi/lib/ace.jar start"]
-
+CMD ["java", "-Xmx1024M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"]
