@@ -1,4 +1,4 @@
-FROM jacobalberty/unifi:stable
+FROM jacobalberty/unifi:v8
 
 ENV RUNAS_UID0=true
 ENV UNIFI_GID=999
