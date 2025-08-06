@@ -1,7 +1,10 @@
 FROM jacobalberty/unifi:stable
 
 ENV RUNAS_UID0=true
-ENV UNIFI_GID=1000
-ENV UNIFI_UID=1000
+ENV UNIFI_GID=999
+ENV UNIFI_UID=999
 
-EXPOSE 8443 8080 8880 8843 6789 27117
+EXPOSE 8443 8080 8843 8880 6789 27117
+
+CMD ["bash", "-c", "/usr//bin/java -Xmx1024M -jar /usr/lib/unifi/lib/ace.jar start"]
+
