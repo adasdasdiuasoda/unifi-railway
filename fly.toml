@@ -1,0 +1,26 @@
+app = "unifi-controller"  # ou o nome que você deu na Fly.io
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  RUNAS_UID0 = "true"
+  UNIFI_GID = "1000"
+  UNIFI_UID = "1000"
+
+[[services]]
+  internal_port = 8443
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = 443
+
+  [[services.ports]]
+    port = 80
+
+  [[services.ports]]
+    port = 8443
+
+  [[services.tcp_checks]]
+    interval = "10s"
+    timeout = "2s"
