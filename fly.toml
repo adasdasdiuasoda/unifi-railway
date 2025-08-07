@@ -24,3 +24,6 @@ app = "unifi-controller"  # ou o nome que você deu na Fly.io
   [[services.tcp_checks]]
     interval = "10s"
     timeout = "2s"
+    
+add fly.toml
+
