@@ -5,8 +5,8 @@ ENV RUNAS_UID0=true
 ENV UNIFI_GID=1000
 ENV UNIFI_UID=1000
 
-# Portas padrão usadas pelo UniFi
+# Portas necessárias para o UniFi Controller
 EXPOSE 8080 8443 8880 8843 6789 27117
 
-# Railway exige que o processo fique ativo
-CMD ["bash", "-c", "tail -f /dev/null & /usr/local/bin/docker-entrypoint.sh"]
+# Mantém o container ativo e inicia o Unifi Controller corretamente
+CMD ["bash", "-c", "/usr/local/bin/docker-entrypoint.sh"]
