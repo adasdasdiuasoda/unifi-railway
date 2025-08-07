@@ -1,12 +1,12 @@
 FROM jacobalberty/unifi:latest
 
-# Variáveis de ambiente recomendadas
+# Variáveis recomendadas
 ENV RUNAS_UID0=true
 ENV UNIFI_GID=1000
 ENV UNIFI_UID=1000
 
-# Portas padrão necessárias para funcionamento do UniFi Controller
+# Portas padrão usadas pelo UniFi
 EXPOSE 8080 8443 8880 8843 6789 27117
 
-# Use o entrypoint original para manter o serviço vivo corretamente
-CMD ["bash", "-c", "/usr/local/bin/docker-entrypoint.sh"]
+# Railway exige que o processo fique ativo
+CMD ["bash", "-c", "tail -f /dev/null & /usr/local/bin/docker-entrypoint.sh"]
